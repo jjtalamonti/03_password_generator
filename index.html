@@ -21,25 +21,15 @@
       <div class="card-body">
         <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
       </div>
-      <div>
-        <label for="passwordNumber">Password Length</label>
-        <input type="range" min="8" max="128" value="8" id="passwordLength">
-        <input type="number" min="8" max="128" value="8" id="passwordNumber"> 
-        
-      </div>
-      <div class="passwordcharacters">
-        <input  id="uppercase" type="checkbox" name="uppercase">
-        <label for="uppercase">UPPERCASE</label><br>
-        <input id="numbers" type="checkbox" name="numbers">
-        <label for="numbers">Numbers</label><br>
-        <input id="symbols" type="checkbox" name="symbols">
-        <label for="symbols">Symbols</label><br>
-      </div>
       <div class="card-footer">
-        <button id="generate" class="btn" type="submit">Generate Password</button>
+        <button id="generate" class="btn">Generate Password</button>
       </div>
     </div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="script.js"></script>
 </body>
 

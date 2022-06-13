@@ -1,55 +1,74 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-var passwordLength = document.getElementById('passwordLength');
-var passwordNumber = document.getElementById('passwordnumber');
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numbers = "0123456789";
-var symbols = "!@#$%^&*()+=?";
-var form = document.getElementById('password')
+var lowerChar = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var upperChar = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var numberChar = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var symbolChar = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', '?', '+', '=', ':', ';'];
+var passwordCombination = [];
+var userPassword = "";
 
-passwordLength.addEventListener('input', syncAmount)
-passwordNumber.addEventListener('input', syncAmount) 
+var passwordLength;
+var uppercaseLetters;
+var lowercaseLetters;
+var numbers;
+var symbols;
 
-form.addEventListener('submit', e => {
-  e.preventDefault()
-  var password - 
+
+function generatePassword() {
+  passwordLength = prompt("password length must be 8 to 128 characters in length");
+  if ((passwordLength < 8) || (passwordLength > 128)) {
+    alert("Password needs to be between 8 and 128 characters");
+
+  } else {
+    uppercaseLetters = confirm("Would you like uppercase letters in your password");
+    lowercaseLetters = confirm("Would you like lowercase letters in your password");
+    numbers = confirm("Would you like numbers in your password");
+    symbols = confirm("Would you like symbols in your password");
+    console.log(passwordLength);
+    console.log(uppercaseLetters);
+    console.log(lowercaseLetters);
+    console.log(numbers);
+    console.log(symbols);
+  }
+
+  if ((!uppercaseLetters) && (!lowercaseLetters) && (!numbers) && (!symbols)) {
+    alert("please choose at least one character")
+    return "";
+  }
+
+  var passwordConstruction = [];
+  if (symbols) {
+    passwordConstruction = passwordConstruction.concat(symbolChar);
+  }
+  if (uppercaseLetters) {
+    passwordConstruction = passwordConstruction.concat(upperChar);
+  }
+  if (numbers) {
+    passwordConstruction = passwordConstruction.concat(numberChar);
+  }
+  if (lowercaseLetters) {
+    passwordConstruction = passwordConstruction.concat(lowerChar);
+  }
+  console.log(passwordConstruction);
+  if (userPassword) {
+    userPassword = ""
+  }
+  for (let i = 0; i < passwordLength; i++) {
+    var random = Math.floor(Math.random() * passwordConstruction.length);
+    userPassword += passwordConstruction[random];
+  }
+  console.log(userPassword)
+  return userPassword;
+}
+
+
+
+
+$('#generate').on("click", function () {
+  generatePassword();
+  $('#password').text(userPassword)
+
 })
 
-function syncAmount(e) {
-  const value = e.target.value
-  passwordLength.value = value
-  passwordNumber.value = value
-}
 
-// Write password to the #password input
-function writePassword() {
-  var password = '';
-  if(document.passwordcharacters.uppercase.checked){
-    allowed += uppercase;
-  }
-  if(document.passwordcharacters.numbers.checked){
-    allowed += numbers;
-  }
-  if(document.passwordcharacters.symbols.checked){
-    allowed += symbols;
-  }
-  
-  var password = generatePassword();
-  var password_length = parseInt(document.password_length.value);
-  for(var i = 0; i < password_length; i++){
-    var random = Math.floor(Math.random() * allowed.password_length);
-    password =+ allowed[random];
-  }
-  return password;
-  
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
 
-}
 
-// Add event listener to generate button
-function generateBtn.addEventListener("click", writePassword);{
-  
-}
-  
