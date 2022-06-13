@@ -30,6 +30,10 @@ This project was designed to give the user a secure, randomized password based o
 - When the user clicks 'Cancel'
 - Then the prompt is not applied
 
+
+https://user-images.githubusercontent.com/104233323/173259613-d416300b-eab9-4f90-afc2-8359e4a5ed4b.mp4
+
+
 ## License
 
 - This project is licensed under MIT
