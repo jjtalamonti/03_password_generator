@@ -31,7 +31,10 @@ This project was designed to give the user a secure, randomized password based o
 - Then the prompt is not applied
 
 
-https://user-images.githubusercontent.com/104233323/173259613-d416300b-eab9-4f90-afc2-8359e4a5ed4b.mp4
+
+https://user-images.githubusercontent.com/104233323/173259783-7e285b68-e1b9-4116-a3c3-7dec780ff663.mp4
+
+
 
 
 ## License
